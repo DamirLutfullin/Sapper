@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GameController" customModule="Sapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97d-yb-gLG">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Новая игра" id="qMw-wf-XiT"/>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eff-De-lsc" customClass="GameFieldView" customModule="Sapper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="97d-yb-gLG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2f5-fx-6Bf"/>
+                            <constraint firstItem="Eff-De-lsc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5fc-VD-aHf"/>
+                            <constraint firstItem="97d-yb-gLG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W4e-5D-mdi"/>
+                            <constraint firstItem="Eff-De-lsc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WrG-ph-f21"/>
+                            <constraint firstItem="97d-yb-gLG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hn2-5W-Tae"/>
+                            <constraint firstItem="97d-yb-gLG" firstAttribute="top" secondItem="Eff-De-lsc" secondAttribute="bottom" id="mlh-7x-exI"/>
+                            <constraint firstItem="Eff-De-lsc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zlq-Op-RTV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="gameView" destination="Eff-De-lsc" id="bOt-ci-nPs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </scene>
+    </scenes>
+</document>
