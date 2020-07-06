@@ -18,28 +18,31 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97d-yb-gLG">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Новая игра" id="qMw-wf-XiT"/>
+                                    <barButtonItem title="Новая игра" id="qMw-wf-XiT">
+                                        <connections>
+                                            <action selector="startNewGame:" destination="BYZ-38-t0r" id="7Lw-ic-IMf"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eff-De-lsc" customClass="GameFieldView" customModule="Sapper" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWa-bN-8pN">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="97d-yb-gLG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2f5-fx-6Bf"/>
-                            <constraint firstItem="Eff-De-lsc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5fc-VD-aHf"/>
-                            <constraint firstItem="97d-yb-gLG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W4e-5D-mdi"/>
-                            <constraint firstItem="Eff-De-lsc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WrG-ph-f21"/>
-                            <constraint firstItem="97d-yb-gLG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hn2-5W-Tae"/>
-                            <constraint firstItem="97d-yb-gLG" firstAttribute="top" secondItem="Eff-De-lsc" secondAttribute="bottom" id="mlh-7x-exI"/>
-                            <constraint firstItem="Eff-De-lsc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zlq-Op-RTV"/>
+                            <constraint firstItem="OWa-bN-8pN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8VB-4w-vCe"/>
+                            <constraint firstItem="97d-yb-gLG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="904-Sg-TMB"/>
+                            <constraint firstItem="OWa-bN-8pN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dps-W4-xtJ"/>
+                            <constraint firstItem="97d-yb-gLG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qot-ed-YAr"/>
+                            <constraint firstItem="97d-yb-gLG" firstAttribute="top" secondItem="OWa-bN-8pN" secondAttribute="bottom" id="SLY-EJ-IJ7"/>
+                            <constraint firstItem="97d-yb-gLG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jbt-cO-Fm4"/>
+                            <constraint firstItem="OWa-bN-8pN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pPv-Ia-PaE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="gameView" destination="Eff-De-lsc" id="bOt-ci-nPs"/>
+                        <outlet property="scrollView" destination="OWa-bN-8pN" id="cki-en-Y1C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

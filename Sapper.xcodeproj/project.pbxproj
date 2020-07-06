@@ -23,6 +23,7 @@
 		1928752724B1957F006BD291 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1928752624B1957F006BD291 /* CellView.swift */; };
 		1928753924B1B6A7006BD291 /* BasicStructires.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1928753524B1B6A7006BD291 /* BasicStructires.swift */; };
 		193E39AE24B1B78A0033A71E /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193E39AD24B1B78A0033A71E /* Cell.swift */; };
+		19F95A5E24B3598A00BB938C /* scrollView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F95A5D24B3598A00BB938C /* scrollView + extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		1928753524B1B6A7006BD291 /* BasicStructires.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicStructires.swift; sourceTree = "<group>"; };
 		1928753D24B1B712006BD291 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		193E39AD24B1B78A0033A71E /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		19F95A5D24B3598A00BB938C /* scrollView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "scrollView + extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				191DE24B24AF3EC200E47504 /* Extension Array.swift */,
+				19F95A5D24B3598A00BB938C /* scrollView + extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				191DE22624AF0E6200E47504 /* AppDelegate.swift in Sources */,
 				1928752124AF6DB5006BD291 /* GameFieldView.swift in Sources */,
 				1928752524AF7E73006BD291 /* GameFieldViewDataSource.swift in Sources */,
+				19F95A5E24B3598A00BB938C /* scrollView + extension.swift in Sources */,
 				1928753924B1B6A7006BD291 /* BasicStructires.swift in Sources */,
 				1928752724B1957F006BD291 /* CellView.swift in Sources */,
 				191DE23024AF0E6200E47504 /* Sapper.xcdatamodeld in Sources */,

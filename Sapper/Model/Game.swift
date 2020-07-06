@@ -22,6 +22,7 @@ struct Game {
         openedPoints = []
         
         putBombs()
+        field.generateLabels()
     }
     
     private func generateBombsLocation() -> [Point] {
@@ -39,7 +40,26 @@ struct Game {
         }
     }
     
+    private mutating func revealNeighbors(point: Point) {
+        guard let cell = field[point], cell.type == .isEmpty else { return }
+
+        let neigbors = field.neighborsCells(around: cell).filter({$0.type != .bomb})
+        for neigbor in neigbors {
+            if !openedPoints.contains(neigbor.location) {
+                openedPoints.insert(neigbor.location)
+                if neigbor.type == .isEmpty {
+                    revealNeighbors(point: neigbor.location)
+                }
+            }
+        }
+    }
+    
     mutating func revealCellAtPoint(_ point: Point) {
         openedPoints.insert(point)
+        revealNeighbors(point: point)
+//        field.neighborsCells(around: field[point]!).forEach { (cell) in
+//            print("cell type: \(cell.type), location: \(cell.location)")
+//        }
+//        print("\n")
     }
 }

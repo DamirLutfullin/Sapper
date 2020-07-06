@@ -17,7 +17,6 @@ struct Point: Equatable, Hashable {
     }
 }
 
-
 struct Size {
     let width : Int
     let height: Int

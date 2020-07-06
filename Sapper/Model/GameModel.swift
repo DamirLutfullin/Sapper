@@ -10,7 +10,7 @@ import Foundation
 
 class GameModel {
    
-    private(set) var configuration: Configuration = .beginner
+    private(set) var configuration: Configuration = .advanced
     private(set) var game: Game?
     
     func restart() {
@@ -24,6 +24,21 @@ class GameModel {
         game?.revealCellAtPoint(point)
     }
     
+    func getCellTypeAtCoordinates(_ coordinates: Point) -> CellType {
+        guard var game = game,
+            let cell = game.field[coordinates],
+            game.openedPoints.contains(coordinates) else { return .closed }
+        
+        switch cell.type {
+        case .isEmpty:
+            return .isEmpty
+        case .bomb:
+            return .bombed
+        case .label(value: let value):
+            return .label(value: value)
+        }
+    }
+    
 }
 
 struct Configuration {
@@ -31,4 +46,7 @@ struct Configuration {
     var bombsCount: Int
     
     static let beginner = Configuration(size: Size(width: 9, height: 9), bombsCount: 10)
+    
+     static let advanced = Configuration(size: Size(width: 30, height: 16), bombsCount: 99)
+
 }

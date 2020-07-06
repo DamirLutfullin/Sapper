@@ -10,7 +10,7 @@ import Foundation
 
 struct Field {
     private var size: Size
-    private var cells: [Cell]
+    var cells: [Cell]
     private var generator: Generator
     
     init(size: Size) {
@@ -19,13 +19,44 @@ struct Field {
         self.cells = (0..<self.size.area).map(generator.generate)
     }
     
-    mutating func isAvaliablePoint(point: Point) -> Bool {
-        let index = Generator(width: size.width).indexForPoint(point)
-        return (0..<size.area).contains(index)
+    func isAvaliablePoint(point: Point) -> Bool {
+       return (0..<size.width) ~= point.x && (0..<size.height) ~= point.y
     }
     
     mutating func pickRandomCell() -> Cell? {
         return cells.pickRandomElement()
+    }
+    
+    mutating func generateLabels() {
+        let minedCells = cells.filter(Cell.isBomb)
+        
+        let bombNeighbors = Set<Cell>(minedCells
+            .flatMap(neighborsCells)
+            .filter(Cell.isNotBomb))
+        
+        for bombNeighbor in bombNeighbors {
+            let label = neighborsCells(around: bombNeighbor).reduce(0) { (result, cell) -> Int in
+                return cell.type == .bomb ? result + 1 : result
+            }
+            self[bombNeighbor.location]?.type = .label(value: label)
+        }
+        
+    }
+    
+    func neighborsCells(around cell: Cell) -> [Cell] {
+        let points = [Point(x: -1, y: 1),
+                      Point(x: 0, y: 1),
+                      Point(x: 1, y: 1),
+                      Point(x: 1, y: 0),
+                      Point(x: 1, y: -1),
+                      Point(x: 0, y: -1),
+                      Point(x: -1, y: -1),
+                      Point(x: -1, y: 0)]
+        var field = self
+        return points
+            .map{$0 + cell.location}
+            .filter(isAvaliablePoint)
+            .compactMap({field[$0]})
     }
     
     subscript(point: Point) -> Cell? {

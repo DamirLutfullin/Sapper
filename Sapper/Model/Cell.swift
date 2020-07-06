@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Cell {
+struct Cell: Hashable {
+    
     let location: Point
     var type: Type = .isEmpty
     
@@ -16,10 +17,21 @@ struct Cell {
         self.location = location
     }
     
-    enum `Type`: Equatable {
+    enum `Type`: Equatable, Hashable {
         case isEmpty
         case bomb
         case label (value: Int)
     }
+    
+    static func isBomb(_ cell: Cell) -> Bool {
+        return cell.type == .bomb
+    }
+    
+    
+    static func isNotBomb(_ cell: Cell) -> Bool {
+        return cell.type != .bomb
+    }
+    
+    
 }
 
